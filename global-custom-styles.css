@@ -1,0 +1,360 @@
+/* GLOBAL CUSTOM STYLES
+ * 
+ * Placed here: https://stage.ourtimecapsule.org/wp-admin/admin.php?page=et_divi_options
+ */
+
+/* Remove menu */
+
+#site-header .header-navigation-wrapper, #site-header .mobile-nav-toggle, #main-header, .et-fixed-header {
+	display: none;
+}
+
+#page-container {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	top: 0 !important;
+}
+
+/* Remove footer extra space */
+#footer-widgets {
+	display: none;
+}
+
+/* No clue */
+@media (min-width: 767px) {
+	
+	/*set the width of the button*/
+	.et_pb_newsletter_fields .et_pb_newsletter_button_wrap {
+		flex-basis: 150px !important;
+	}
+
+	/*set the width of the input field minus the width of the button*/
+	.et_pb_newsletter_form .et_pb_newsletter_field {
+		flex-basis: calc(100% - 165px) !important;
+	}
+}
+
+
+/* Tag Cloud */
+.capsule-tag-cloud, .tagcloud a, .wp-block-tag-cloud a {
+	background-color: #5ab5cc !important;
+	color: #0f2b56 !important;
+	border-radius: 100px !important;
+	font-size: 1rem !important;
+	font-weight: 700rem !important;
+	padding: 0.25rem 0.75rem 0.25rem 0.75rem !important;
+	margin: 0.25rem 0.33rem 0.25rem 0.33rem !important;
+	white-space: nowrap;
+	transition: 400ms;
+	transition-property: background-color;
+}
+
+.capsule-tag-cloud:hover, .tagcloud a:hover, .wp-block-tag-cloud a:hover {
+	background-color: #0f2b56 !important;
+	color: white !important;
+}
+
+.st-post-tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*Loading and title */
+.loading-section {
+	max-height: 100vh;
+	position: fixed;
+	top: 0%;
+	bottom: 0%;
+	right: 0%;
+	left: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #bad9e4;
+	z-index: 10;
+	text-align: center;
+  font-family: Campton, Poppins;
+  font-weight: 900;
+  color: #0F2B56;
+	padding: 80px 0 80px 0;
+}
+
+.loading-title {
+	font-size: 95px;
+	color: #0f2b56;
+	padding: 10px;
+}
+
+/* Interpage Loading */
+.transition-section {
+	position: fixed;
+	max-width: 0vw;
+	top: 0%;
+	bottom: 0%;
+	right: 0%;
+	left: 0%;
+	background-color: #bad9e4;
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+		z-index: 100;
+  }
+	98% {
+		z-index: 100;
+	}
+  100% {
+    transform: translateX(-100vw);
+		z-index: -100;
+  }
+}
+
+.post-loading-section {
+	position: fixed;
+	top: 0%;
+	bottom: 0%;
+	right: 0%;
+	left: 0%;
+	animation: 500ms ease 0s 1 	slideOutToLeft;
+  background-color: #bad9e4;
+  animation-fill-mode: forwards;       
+	z-index: 10000;
+}
+
+@media screen and (max-width: 980px) {
+  .loading-title {
+  font-size: 77px;
+}
+} 
+
+@media screen and (max-width: 768px) {
+  .loading-title {
+  font-size: 58px;
+	padding: 35px 35px 75px 35px;
+}
+} 
+
+.GIFspan {
+  background-image: url(https://stage.ourtimecapsule.org/wp-content/uploads/2022/07/flashypreview-1.gif);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.1);
+}
+
+/* Filter buttons */
+.alm-filter--inner ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.alm-filter--category ul {
+	justify-content: space-around !important;
+}
+
+
+.alm-filter--link {
+	border-radius: 100px !important;
+	font-size: 1rem !important;
+	font-weight: 700rem !important;
+	padding: 0.5rem 0.75rem 0.5rem 0.75rem !important;
+	margin: 0.25rem 0.33rem 0.25rem 0.33rem !important;
+	white-space: nowrap;
+	transition: 400ms;
+	transition-property: background-color;
+}
+
+.alm-filter--tag .alm-filter--link {
+	background-color: #5ab5cc !important;
+	color: #0f2b56 !important;
+}
+
+.alm-filter--category .alm-filter--link {
+background-color: #0F2B56 !important;
+	color: white !important;
+}
+
+
+.alm-filter--tag .alm-filter--link.active,
+.alm-filter--tag .alm-filter--link:hover {
+	background-color: #0F2B56 !important;
+	color: white !important;
+}
+
+.alm-filter--category .alm-filter--link.active,
+.alm-filter--category .alm-filter--link:hover {
+	background-color: #de512c !important;
+}
+
+.alm-filter--link::before, .alm-filter--link::after {
+	display: none !important;
+}
+
+#alm-filters-filter_by_tag {
+	margin: 0;
+}
+
+#alm-filters-filter_all {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.alm-filter--inner {
+	padding: 0 !important;
+}
+/* Sort labels */
+#tag-label{
+	background-color: #5ab5cc;
+  color: #0f2b56 !important;
+  padding: 4px 10px 4px 10px;
+  margin: 0;
+  border-radius: 20px;	
+}
+
+#category-label {
+	display: inline;
+	padding: 4px 10px 4px 10px;
+	margin: 0;
+	border-radius: 60px;
+	background-color: #0F2B56;
+  color: white !important;
+  padding: 4px 10px 4px 10px;
+  margin: 0;
+  border-radius: 20px;	
+}
+
+/* Dynamic Iconization */
+
+		/* Videos */
+article.category-video a.entry-featured-image-url::after {  
+	content: "\0025BA";
+	right: 4%
+}
+
+		/* Essays */
+article.category-essays a.entry-featured-image-url::after {  
+	content: "\002631";
+	right: 6%;
+}
+
+
+		/* Both */ 
+		a.entry-featured-image-url::after {
+ 			position: absolute;
+  		top: 50%;
+			color: white;
+      font-size: 6vw;
+	}
+
+
+		@media(max-width: 980px) {
+    a.entry-featured-image-url::after{
+			 font-size: 15vw;
+  }
+	}
+
+		@media(max-width: 769px) {
+    a.entry-featured-image-url::after{
+			 font-size: 11vw;
+  }
+	}
+
+      @media(max-width: 480px) {
+    a.entry-featured-image-url::after{
+			 font-size: 39vw;
+  }
+	}
+
+/* Capsule Feed */
+.alm-listing .css-grid {
+	display: inline-grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 8vw 8vw;
+	width: 88%
+}
+
+@media screen and (max-width:980px){
+	.alm-listing .css-grid{
+		grid-template-columns: 1fr;
+	}
+}
+
+.alm-listing .css-grid > div {
+	margin: 0 5px 10px;
+	padding-bottom: 25px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #efefef;
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div) {
+  aspect-ratio: 55.3/128;
+  width: 100%;}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div) img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+  -webkit-mask-image:  url("/wp-content/uploads/2022/09/Time-Capsule.svg");
+  mask-image: url("/wp-content/uploads/2022/09/Time-Capsule.svg");
+	transition: 400ms;
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div)::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  right: 10%;
+  bottom: 2%;
+  height: 40%;
+  width: 150%;
+  background-color: #eee;
+  border-radius: 500px;
+  z-index: -10;
+	pointer-events: none;
+  transition: 400ms;
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div):hover img {
+  transform: translate(0px,-20px)
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div):active img {
+  transform: translate(0px,-20px)
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div):hover::before  {
+  transform: translate(-10px);
+  filter: blur(2px);
+}
+
+/* Related capsules */
+.related-capsules {
+	display: inline-grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 10vw 10vw;
+	max-height: 45vh;
+}
+
+/* Gstatic was broken adnd we need this font */
+
+@font-face {
+  font-family: 'Gaegu';
+  src: url('/wp-content/themes/divi-child/fonts/gaegu-regular-webfont3.woff2') format('woff2') !important;
+  font-weight: bold;
+  font-style: normal;
+}
+.gaegu {
+	font-family: 'Gaegu',handwriting !important;
+	src: url('/wp-content/themes/divi-child/fonts/gaegu-regular-webfont3.woff2') format('woff2') !important;
+    font-weight: 700 !important;
+
+    font-size: 60px !important;
+    color: #0f2b56 !important;	
+}
