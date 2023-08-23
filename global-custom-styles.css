@@ -1,7 +1,44 @@
-/* GLOBAL CUSTOM STYLES
+/* 
+ * GLOBAL CUSTOM STYLES
  * 
  * Placed here: https://stage.ourtimecapsule.org/wp-admin/admin.php?page=et_divi_options
  */
+
+ /* Variables
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --blue-1: #bedeeb;
+    --blue-2: #bad9e4;
+    --blue-3: #5ab5cc;
+    --blue-4: #328ca2;
+    --blue-5: #0f2b56;
+    --yellow-1: #f1d178;
+    --yellow-2: #edcb6a;
+    --yellow-3: #f3941f;
+    --cyan-1: #b8e7da;
+    --cyan-2: #82d6c1;
+    --cyan-3: #5fc1a7;
+    --green-1: #b9e19f;
+    --green-2: #6a9740;
+    --green-3: #28792a;
+    --green-4: #29682a;
+    --purple-1: #e0bbdc;
+    --purple-2: #c27ab5;
+    --purple-3: #965a8d;
+    --grey-1: #e3e8ee;
+    --grey-2: #a5a5a5;
+    --grey-3: #4b4b4e;
+    --grey-4: #313133;
+    --orange-1: #ee7346;
+    --orange-2: #e55f26;
+    --orange-3: #ab411a;
+    --red-3: #d84b27;
+}
+
+/* Custom Styles
+   ========================================================================== */
 
 /* Remove menu */
 
@@ -37,7 +74,7 @@
 
 /* Tag Cloud */
 .capsule-tag-cloud, .tagcloud a, .wp-block-tag-cloud a {
-	background-color: #5ab5cc !important;
+	background-color: var(--blue-3) !important;
 	color: #0f2b56 !important;
 	border-radius: 100px !important;
 	font-size: 1rem !important;
@@ -50,7 +87,7 @@
 }
 
 .capsule-tag-cloud:hover, .tagcloud a:hover, .wp-block-tag-cloud a:hover {
-	background-color: #0f2b56 !important;
+	background-color: var(--blue-5) !important;
 	color: white !important;
 }
 
@@ -71,18 +108,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #bad9e4;
+  background-color: var(--blue-2);
 	z-index: 10;
 	text-align: center;
   font-family: Campton, Poppins;
   font-weight: 900;
-  color: #0F2B56;
+  color: var(--blue-5);
 	padding: 80px 0 80px 0;
 }
 
 .loading-title {
 	font-size: 95px;
-	color: #0f2b56;
+	color: var(--blue-5);
 	padding: 10px;
 }
 
@@ -94,7 +131,7 @@
 	bottom: 0%;
 	right: 0%;
 	left: 0%;
-	background-color: #bad9e4;
+	background-color: var(--blue-2);
 }
 
 @keyframes slideOutToLeft {
@@ -118,7 +155,7 @@
 	right: 0%;
 	left: 0%;
 	animation: 500ms ease 0s 1 	slideOutToLeft;
-  background-color: #bad9e4;
+  background-color: var(--blue-2);
   animation-fill-mode: forwards;       
 	z-index: 10000;
 }
@@ -154,7 +191,6 @@
 	justify-content: space-around !important;
 }
 
-
 .alm-filter--link {
 	border-radius: 100px !important;
 	font-size: 1rem !important;
@@ -166,34 +202,18 @@
 	transition-property: background-color;
 }
 
-.alm-filter--tag .alm-filter--link {
-	background-color: #5ab5cc !important;
-	color: #0f2b56 !important;
-}
-
 .alm-filter--category .alm-filter--link {
-background-color: #0F2B56 !important;
-	color: white !important;
-}
-
-
-.alm-filter--tag .alm-filter--link.active,
-.alm-filter--tag .alm-filter--link:hover {
-	background-color: #0F2B56 !important;
+background-color: var(--grey-2) !important;
 	color: white !important;
 }
 
 .alm-filter--category .alm-filter--link.active,
 .alm-filter--category .alm-filter--link:hover {
-	background-color: #de512c !important;
+	background-color: var(--green-2) !important;
 }
 
 .alm-filter--link::before, .alm-filter--link::after {
 	display: none !important;
-}
-
-#alm-filters-filter_by_tag {
-	margin: 0;
 }
 
 #alm-filters-filter_all {
@@ -206,21 +226,15 @@ background-color: #0F2B56 !important;
 .alm-filter--inner {
 	padding: 0 !important;
 }
+
 /* Sort labels */
-#tag-label{
-	background-color: #5ab5cc;
-  color: #0f2b56 !important;
-  padding: 4px 10px 4px 10px;
-  margin: 0;
-  border-radius: 20px;	
-}
 
 #category-label {
 	display: inline;
 	padding: 4px 10px 4px 10px;
 	margin: 0;
 	border-radius: 60px;
-	background-color: #0F2B56;
+	background-color: var(--blue-5);
   color: white !important;
   padding: 4px 10px 4px 10px;
   margin: 0;
@@ -288,7 +302,7 @@ article.category-essays a.entry-featured-image-url::after {
 	padding-bottom: 25px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
-	border: 1px solid #efefef;
+	border: 1px solid var(--grey-1);
 }
 
 .et_pb_ajax_pagination_container:not(#no-capsule-style div) {
@@ -356,5 +370,5 @@ article.category-essays a.entry-featured-image-url::after {
     font-weight: 700 !important;
 
     font-size: 60px !important;
-    color: #0f2b56 !important;	
+    color: var(--blue-5) !important;	
 }
