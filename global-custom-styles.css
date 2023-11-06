@@ -97,7 +97,7 @@
 }
 
 /*Loading and title */
-.loading-section {
+#landing {
 	max-height: 100vh;
 	position: fixed;
 	top: 0%;
@@ -148,6 +148,20 @@
   }
 }
 
+@keyframes slideUp {
+	0% {
+	  transform: translateY(0);
+		  z-index: 100;
+	}
+	  98% {
+		  z-index: 100;
+	  }
+	100% {
+	  transform: translateY(-100vw);
+		  z-index: -100;
+	}
+  }
+
 .post-loading-section {
 	position: fixed;
 	top: 0%;
@@ -158,6 +172,11 @@
   background-color: var(--blue-2);
   animation-fill-mode: forwards;       
 	z-index: 10000;
+}
+
+.animate-out {
+	animation: 500ms ease 0s 1 	slideUp;
+	animation-fill-mode: forwards;      
 }
 
 @media screen and (max-width: 980px) {
@@ -174,7 +193,7 @@
 } 
 
 .GIFspan {
-  background-image: url(https://stage.ourtimecapsule.org/wp-content/uploads/2022/07/flashypreview-1.gif);
+  background-image: url("/wp-content/themes/divi-child/rebuild/flashy-preview.gif");
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
@@ -188,7 +207,7 @@
 }
 
 .alm-filter--category ul {
-	justify-content: space-around !important;
+	justify-content: space-around;
 }
 
 .alm-filter--link {
@@ -286,15 +305,9 @@ article.category-essays a.entry-featured-image-url::after {
 /* Capsule Feed */
 .alm-listing .css-grid {
 	display: inline-grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-gap: 8vw 8vw;
-	width: 88%
-}
-
-@media screen and (max-width:980px){
-	.alm-listing .css-grid{
-		grid-template-columns: 1fr;
-	}
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 8vw 18vw;
+	width: 100%
 }
 
 .alm-listing .css-grid > div {
@@ -307,7 +320,8 @@ article.category-essays a.entry-featured-image-url::after {
 
 .et_pb_ajax_pagination_container:not(#no-capsule-style div) {
   aspect-ratio: 55.3/128;
-  width: 100%;}
+  width: 100%;
+}
 
 .et_pb_ajax_pagination_container:not(#no-capsule-style div) img {
 	height: 100%;
@@ -315,8 +329,32 @@ article.category-essays a.entry-featured-image-url::after {
 	object-fit: cover;
 	-webkit-mask-size: cover;
 	mask-size: cover;
-  -webkit-mask-image:  url("/wp-content/uploads/2022/09/Time-Capsule.svg");
-  mask-image: url("/wp-content/uploads/2022/09/Time-Capsule.svg");
+  -webkit-mask-image:  url("/wp-content/themes/divi-child/rebuild/capsule-image-mask.svg");
+  mask-image: url("/wp-content/themes/divi-child/rebuild/capsule-image-mask.svg");
+	transition: 400ms;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.et_pb_ajax_pagination_container:not(#no-capsule-style div)::after {
+	height: 95%;
+	width: 95%;
+	background-color: #4e4e4e;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	content: "";
+	z-index: -1;
+	object-fit: cover;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	-webkit-mask-image: url("/wp-content/themes/divi-child/rebuild/capsule-list-mask.svg");
+	mask-image: url("/wp-content/themes/divi-child/rebuild/capsule-list-mask.svg");
 	transition: 400ms;
 }
 
@@ -325,7 +363,7 @@ article.category-essays a.entry-featured-image-url::after {
   pointer-events: none;
   position: absolute;
   right: 10%;
-  bottom: 2%;
+  bottom: 0%;
   height: 40%;
   width: 150%;
   background-color: #eee;
@@ -348,6 +386,10 @@ article.category-essays a.entry-featured-image-url::after {
   filter: blur(2px);
 }
 
+.et_pb_ajax_pagination_container:not(#no-capsule-style div):hover::after  {
+	transform: translate(0px,-20px)
+  }
+
 /* Related capsules */
 .related-capsules {
 	display: inline-grid;
@@ -356,7 +398,7 @@ article.category-essays a.entry-featured-image-url::after {
 	max-height: 45vh;
 }
 
-/* Gstatic was broken adnd we need this font */
+/* Gstatic was broken and we need this font */
 
 @font-face {
   font-family: 'Gaegu';
@@ -372,3 +414,93 @@ article.category-essays a.entry-featured-image-url::after {
     font-size: 60px !important;
     color: var(--blue-5) !important;	
 }
+
+@media screen and (max-width:980px){
+	.alm-listing .css-grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	#main-footer {
+		display: none;
+	}
+}
+
+.embla {
+	overflow: hidden;
+}
+
+.embla__container {
+	display: flex;
+	flex-wrap: nowrap !important;
+	justify-content: start !important
+}
+
+.et_pb_code_0 {
+	max-width: 100%;
+}
+
+#click-and-drag {
+	display: none;
+}
+
+#swipe {
+	display: none;
+}
+
+@media (hover: none) {
+	#click-and-drag {
+		display: none;
+	}
+
+	#swipe {
+		display: block;
+	}
+}
+
+@media (max-width: 720px) {
+	#click-and-drag {
+		display: block;
+	}
+
+	#swipe {
+		display: none;
+	}
+}
+
+#header {
+	transition: translate 400ms;
+}
+
+.open-button {
+	color: #fff;
+	text-align: center;
+	background-color: #d84b27;
+	border: .25rem solid #d84b27;
+	border-radius: 100rem;
+	margin: 1rem;
+	padding: .75rem 2rem;
+	font-family: Campton, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 600;
+	transition: color .2s, background-color .2s;
+}
+
+#main-footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 5;
+  }
+
+#menu-footer {
+	display: flex;
+	justify-content: space-between;
+  }  
+
+#menu-item-8053 {} /* Home */
+#menu-item-2718 {} /* Add your story */
+#menu-item-7745 {} /* Find your submission */
+#menu-item-7712 {} /* Search by partner */
+#menu-item-2680 {} /* About */
+#menu-item-2682 {} /* Donate */
+#menu-item-2683 {} /* Signup for emails */

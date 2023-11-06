@@ -1,0 +1,17 @@
+<script>
+    document.querySelector('.alm-filter--inner').classList.add('embla');
+    document.querySelector('.alm-filter--inner > ul').classList.add('embla__container');
+    document.querySelectorAll('.alm-filter--checkbox').forEach((e) => { e.classList.add('embla__slide') });
+</script>
+
+<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+
+<script type="text/javascript" defer>
+    const emblaNode = document.querySelector('.embla');
+    const prevBtn = document.querySelector('.embla__button--prev')
+    const nextBtn = document.querySelector('.embla__button--next')
+
+    var options = { dragFree: true, containScroll: 'trimSnaps', loop: false }
+
+    var emblaApi = EmblaCarousel(emblaNode, options)
+</script>

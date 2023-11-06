@@ -1,0 +1,22 @@
+<div id="landing">
+    <a href="https://2023.ourtimecapsule.org/">
+        <h1 class="loading-title"> TIME CAPSULE <span class="GIFspan"> 2023 </span></h1>
+    </a>
+    <p>Each of the stories here represents the contribution of one kid for the 2023 Time Capsule. You can view these
+        stories of celebration until December 31, 2023 when the Time Capsule is sealed for the next ten years.</p>
+    <button id="open-button">Continue</button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('header').style.translate = "0 -100%"
+        document.getElementById('open-button').addEventListener('click', () => {
+            document.getElementById('landing').classList.add('animate-out');
+            setTimeout(() => {
+                document.getElementById('header').style.translate = "0"
+            }, 360);
+            setTimeout(() => {
+                document.getElementById('landing').style.display = "none"
+            }, 360);
+        })
+    });
+</script>
